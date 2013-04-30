@@ -3831,7 +3831,7 @@ class sShopwareImport
 	 */
 	function sArticleTranslation($article)
 	{
-        $sql = "SELECT DISTINCT LEFT(locale, 2) as isocode, l.id as id FROM s_core_shops s
+        $sql = "SELECT DISTINCT LEFT(locale, 2) as isocode, s.id as id FROM s_core_shops s
       		    INNER JOIN s_core_locales l ON s.locale_id = l.id
       		    AND LEFT(l.locale,2) <> 'de'";
         $languages = $this->sDB->getAll($sql);
